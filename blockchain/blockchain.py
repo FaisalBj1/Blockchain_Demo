@@ -63,13 +63,16 @@ def new_transaction():
     # TODO: check the required fields
     transaction_results = blockchain.submit_transaction(values['confirmation_sender_public_key'],
                                                         values['confirmation_recipient_public_key'],
-                                                        values['transaction_signature'], values['confirmation_amount'])
-    if transaction_results == False:
-        response = {'message': 'Invalid transaction/signature'}
-        return jsonify(response), 406
-    else:
+                                                        values['transaction_signature'],
+                                                        values['confirmation_amount'])
+
+    if transaction_results:
         response = {'message': 'Transaction will be added to the Block ' + str(transaction_results)}
         return jsonify(response), 201
+    else:
+        response = {'message': 'Invalid transaction/signature'}
+        return jsonify(response), 406
+
 
 if __name__ == '__main__':
     from argparse import ArgumentParser
