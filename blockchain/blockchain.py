@@ -7,6 +7,8 @@ from Crypto.PublicKey import RSA
 from Crypto.Signature import PKCS1_v1_5
 from Crypto.Hash import SHA
 
+MINING_SENDER = "The Blockchain"
+
 
 class Blockchain:
 
@@ -34,23 +36,34 @@ class Blockchain:
         public_key = RSA.importKey(binascii.unhexlify(sender_public_key))
         verifier = PKCS1_v1_5.new(public_key)
         h = SHA.new(str(transaction).encode('utf8'))
-        return verifier.verify(h, binascii.unhexlify(signature))
+
+        try:
+            verifier.verify(h, binascii.unhexlify(signature))
+            return True
+        except ValueError:
+            return False
 
     def submit_transaction(self, sender_public_key, recipient_public_key, signature, amount):
         # TODO: Reward the miner
-        # TODO: Signature validation
 
         transaction = OrderedDict({
             'sender_public_key': sender_public_key,
             'recipient_public_key': recipient_public_key,
             'amount': amount
         })
-        signature_verification = self.verify_transaction_signature(sender_public_key, signature, transaction)
-        if signature_verification:
+
+        # Rewarding the miner for mining a block
+        if sender_public_key == MINING_SENDER:
             self.transactions.append(transaction)
             return len(self.chain) + 1
         else:
-            return False
+            # transaction between wallets
+            signature_verification = self.verify_transaction_signature(sender_public_key, signature, transaction)
+            if signature_verification:
+                self.transactions.append(transaction)
+                return len(self.chain) + 1
+            else:
+                return False
 
 
 # Instantiate the Blockchain

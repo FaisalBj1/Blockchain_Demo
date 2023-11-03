@@ -7,7 +7,6 @@
     <list default="true" id="72e63044-2ecb-4b18-9ebf-0fe93399e46d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain_client/blockchain_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain_client/blockchain_client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
