@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72e63044-2ecb-4b18-9ebf-0fe93399e46d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/templates/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="72e63044-2ecb-4b18-9ebf-0fe93399e46d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +28,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vid5&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Faisa/Desktop/Senior_Project/CPIS-499/Blockchain_Demo&quot;
   }
 }</component>
@@ -109,9 +105,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Node1" />
       <item itemvalue="Python.Alice" />
       <item itemvalue="Python.Bob" />
+      <item itemvalue="Python.Node1" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
