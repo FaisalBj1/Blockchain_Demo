@@ -5,8 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72e63044-2ecb-4b18-9ebf-0fe93399e46d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/imgs/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/black logo text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/black logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/black name text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/black under name text.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/block drive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/download-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/download.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/full black logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/chat icon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/chat icon2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/copy_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/cut_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/drive icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/exchange icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/file-example icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/nothing.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/profile avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/setting icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/share_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/sign_out icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/trash icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/trash(white).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/icons/wallet icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/image (2).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/images-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/dark back.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/images (1) - Copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/images (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/images (3).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/light_background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/light_background2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/main wallpaper.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/main wallpaperex.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/main wallpapernewex.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/web background/xxx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/white block drive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/white full logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgs/white_logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +60,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2XcgYlnW0Dr0klbuFPR2E8mnZ03" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,10 +72,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "vid5",
-    "last_opened_file_path": "C:/Users/Faisa/Desktop/All_Tutorial_Series_Codes/blockchain_demo_section_Vid5"
+    "last_opened_file_path": "C:/Users/Faisa/Desktop/Senior_Project/CPIS-499/Blockchain_Demo"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.Node1">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Faisa\Desktop\Senior_Project\CPIS-499\Blockchain_Demo" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Bob">
     <configuration name="Alice" type="PythonConfigurationType" factoryName="Python">
       <module name="Blockchain_Demo" />
       <option name="INTERPRETER_OPTIONS" value="" />

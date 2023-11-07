@@ -44,8 +44,6 @@ class Blockchain:
             return False
 
     def submit_transaction(self, sender_public_key, recipient_public_key, signature, amount):
-        # TODO: Reward the miner
-
         transaction = OrderedDict({
             'sender_public_key': sender_public_key,
             'recipient_public_key': recipient_public_key,
@@ -83,6 +81,11 @@ def index():
 def new_transaction():
     values = request.form
     # TODO: check the required fields
+
+    check_fields = ['confirmation_sender_public_key', 'confirmation_recipient_public_key', 'transaction_signature', 'confirmation_amount']
+    if not all (k in values for k in check_fields):
+        return 'missing values', 400
+
     transaction_results = blockchain.submit_transaction(values['confirmation_sender_public_key'],
                                                         values['confirmation_recipient_public_key'],
                                                         values['transaction_signature'],
