@@ -72,6 +72,13 @@ app = Flask(__name__)
 CORS(app)
 
 
+@app.route('/transactions/get', methods=['GET'])
+def get_transactions():
+    transactions = blockchain.transactions
+    response = {'transactions': transactions}
+    return jsonify(response), 200
+
+
 @app.route('/')
 def index():
     return render_template('./index.html')
