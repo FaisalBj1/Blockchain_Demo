@@ -87,7 +87,6 @@ def index():
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
     values = request.form
-    # TODO: check the required fields
 
     check_fields = ['confirmation_sender_public_key', 'confirmation_recipient_public_key', 'transaction_signature', 'confirmation_amount']
     if not all (k in values for k in check_fields):
