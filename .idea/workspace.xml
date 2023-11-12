@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72e63044-2ecb-4b18-9ebf-0fe93399e46d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/blockchain/static/vendor/font-awesome/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockchain/static/vendor/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockchain/static/vendor/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockchain/static/vendor/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockchain_client/static/vendor/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockchain_client/static/vendor/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blockchain_client/static/vendor/fonts/fontawesome-webfont.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain_client/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain_client/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain_client/templates/make_transaction.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain_client/templates/make_transaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain_client/templates/view_transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain_client/templates/view_transactions.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
