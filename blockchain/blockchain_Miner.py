@@ -1,4 +1,4 @@
-#not mine
+# not mine
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 # my own
@@ -64,8 +64,11 @@ def mine():
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
     values = request.form
-    required = ['confirmation_sender_public_key', 'confirmation_recipient_public_key', 'transaction_signature',
+    required = ['confirmation_sender_public_key',
+                'confirmation_recipient_public_key',
+                'transaction_signature',
                 'confirmation_amount']
+
     if not all(k in values for k in required):
         return 'Missing values', 400
 

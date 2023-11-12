@@ -1,6 +1,4 @@
-from flask import Flask, request, jsonify, render_template
 from time import time
-from flask_cors import CORS
 from collections import OrderedDict
 import binascii
 from Crypto.PublicKey import RSA
