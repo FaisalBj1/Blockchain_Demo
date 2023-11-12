@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72e63044-2ecb-4b18-9ebf-0fe93399e46d" name="Changes" comment="" />
+    <list default="true" id="72e63044-2ecb-4b18-9ebf-0fe93399e46d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,14 +28,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;vid6&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Faisa/Desktop/All_Tutorial_Series_Codes/vid6&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "vid6",
+    "last_opened_file_path": "C:/Users/Faisa/Desktop/All_Tutorial_Series_Codes/vid6",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Faisa\Desktop\Senior_Project\CPIS-499\Blockchain_Demo" />
