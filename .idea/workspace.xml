@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72e63044-2ecb-4b18-9ebf-0fe93399e46d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/blockchain_client/Transaction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/Blockchain_Class.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/Blockchain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blockchain/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/blockchain_Miner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain_client/blockchain_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain_client/blockchain_client.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
       <recent name="C:\Users\Faisa\Desktop\Senior_Project\CPIS-499\Blockchain_Demo\blockchain" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Node1">
+  <component name="RunManager" selected="Python.Alice">
     <configuration name="Alice" type="PythonConfigurationType" factoryName="Python">
       <module name="Blockchain_Demo" />
       <option name="INTERPRETER_OPTIONS" value="" />
