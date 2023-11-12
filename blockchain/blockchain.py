@@ -71,7 +71,7 @@ class Blockchain:
         return 12345;
 
 
-    def hash(selfk):
+    def hash(selfk, block):
         return 'abc';
 
 
