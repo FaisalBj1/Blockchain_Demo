@@ -7,17 +7,20 @@ from Crypto.PublicKey import RSA
 from Crypto.Signature import PKCS1_v1_5
 from Crypto.Hash import SHA
 from uuid import uuid4
+import json
+import hashlib
 
 MINING_SENDER = "The Blockchain"
 MINING_REWARD = 1
 
 
+# Blockchain class
 class Blockchain:
 
     def __init__(self):
         self.transactions = []
         self.chain = []
-        self.node_id =   str(uuid4()).replace('-','')
+        self.node_id = str(uuid4()).replace('-', '')
         # Create the genesis block
         self.create_block(0, '00')
 
@@ -34,17 +37,27 @@ class Blockchain:
         # Reset the current list of transactions
         self.transactions = []
         self.chain.append(block)
+        return block
 
     def verify_transaction_signature(self, sender_public_key, signature, transaction):
         public_key = RSA.importKey(binascii.unhexlify(sender_public_key))
         verifier = PKCS1_v1_5.new(public_key)
         h = SHA.new(str(transaction).encode('utf8'))
-
         try:
             verifier.verify(h, binascii.unhexlify(signature))
             return True
         except ValueError:
             return False
+
+    def proof_of_work(self):
+        return 12345
+
+    def hash(self, block):
+        # We must ensure that the Dictionary is ordered, otherwise we'll get inconsistent hashes
+        block_string = json.dumps(block, sort_keys=True).encode('utf8')
+        h = hashlib.new('sha256')
+        h.update(block_string)
+        return h.hexdigest()
 
     def submit_transaction(self, sender_public_key, recipient_public_key, signature, amount):
         transaction = OrderedDict({
@@ -53,12 +66,12 @@ class Blockchain:
             'amount': amount
         })
 
-        # Rewarding the miner for mining a block
+        # Reward for mining a block
         if sender_public_key == MINING_SENDER:
             self.transactions.append(transaction)
             return len(self.chain) + 1
         else:
-            # transaction between wallets
+            # Transaction from wallet to another wallet
             signature_verification = self.verify_transaction_signature(sender_public_key, signature, transaction)
             if signature_verification:
                 self.transactions.append(transaction)
@@ -66,13 +79,7 @@ class Blockchain:
             else:
                 return False
 
-
-    def proof_of_work(self):
-        return 12345;
-
-
-    def hash(selfk, block):
-        return 'abc';
+    # end of Blockchain class
 
 
 # Instantiate the Blockchain
@@ -83,10 +90,25 @@ app = Flask(__name__)
 CORS(app)
 
 
+@app.route('/')
+def index():
+    return render_template('./index.html')
+
+
 @app.route('/transactions/get', methods=['GET'])
 def get_transactions():
     transactions = blockchain.transactions
     response = {'transactions': transactions}
+    return jsonify(response), 200
+
+
+@app.route('/chain', methods=['GET'])
+def get_chain():
+    response = {
+        'chain': blockchain.chain,
+        'length': len(blockchain.chain)
+    }
+
     return jsonify(response), 200
 
 
@@ -114,34 +136,24 @@ def mine():
     return jsonify(response), 200
 
 
-@app.route('/')
-def index():
-    return render_template('./index.html')
-
-
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
     values = request.form
-
-    check_fields = ['confirmation_sender_public_key',
-                    'confirmation_recipient_public_key',
-                    'transaction_signature',
-                    'confirmation_amount']
-
-    if not all (k in values for k in check_fields):
-        return 'missing values', 400
+    required = ['confirmation_sender_public_key', 'confirmation_recipient_public_key', 'transaction_signature',
+                'confirmation_amount']
+    if not all(k in values for k in required):
+        return 'Missing values', 400
 
     transaction_results = blockchain.submit_transaction(values['confirmation_sender_public_key'],
                                                         values['confirmation_recipient_public_key'],
                                                         values['transaction_signature'],
                                                         values['confirmation_amount'])
-
-    if transaction_results:
-        response = {'message': 'Transaction will be added to the Block ' + str(transaction_results)}
-        return jsonify(response), 201
-    else:
+    if not transaction_results:
         response = {'message': 'Invalid transaction/signature'}
         return jsonify(response), 406
+    else:
+        response = {'message': 'Transaction will be added to the Block ' + str(transaction_results)}
+        return jsonify(response), 201
 
 
 if __name__ == '__main__':
