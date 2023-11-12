@@ -2,14 +2,9 @@
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 # my own
-from Blockchain_Class import Blockchain
-from Blockchain_Class import MINING_SENDER
-from Blockchain_Class import MINING_REWARD
-
-
-
-
-
+from Blockchain import Blockchain
+from Blockchain import MINING_SENDER
+from Blockchain import MINING_REWARD
 
 
 # Instantiate the Blockchain
