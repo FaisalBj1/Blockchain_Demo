@@ -80,7 +80,7 @@ class Blockchain:
 
     @staticmethod
     def hash(block):
-        # We must to ensure that the Dictionary is ordered, otherwise we'll get inconsistent hashes
+        # We must ensure that the Dictionary is ordered, otherwise we'll get inconsistent hashes
         block_string = json.dumps(block, sort_keys=True).encode('utf8')
         h = hashlib.new('sha256')
         h.update(block_string)
@@ -221,7 +221,7 @@ def new_transaction():
                                                         values['confirmation_recipient_public_key'],
                                                         values['transaction_signature'],
                                                         values['confirmation_amount'])
-    if transaction_results == False:
+    if not transaction_results:
         response = {'message': 'Invalid transaction/signature'}
         return jsonify(response), 406
     else:
