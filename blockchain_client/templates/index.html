@@ -1,113 +1,52 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blockchain Client</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Blockchain Demo - CLIENT</title>
+        <link rel="stylesheet" href="/static/vendor/DataTables/css/datatables.min.css">
+        <!-- FaisalBj1 -->
+        <script type="text/javascript" src="{{ url_for('static', filename='main-CSS_JS/main.js') }}"></script>
+        <script>
+            //toggle theme
+            function toggleTheme() {
+                const root = document.documentElement;
+                const currentTheme = root.getAttribute('data-theme');
 
-    <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/vendor/DataTables/css/datatables.min.css">
-    <link rel="stylesheet" href="/static/vendor/fontawesome-06/fontawesome.min.css">
-    <link rel="stylesheet" href="/static/css/custom.css">
-
-</head>
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a href="#" class="navbar-brand">Blockchain Client</a>
-
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a href="/" class="nav-link">Wallet Generator</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/make/transaction" class="nav-link">Make Transaction</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/view/transactions" class="nav-link">View Transactions</a>
-                    </li>
-                </ul>
+                if (currentTheme === 'light') {
+                    root.setAttribute('data-theme', 'dark');
+                    document.getElementById('light_icon_li').style.display = 'block';
+                    document.getElementById('dark_icon_li').style.display = 'none';
+                } else {
+                    root.setAttribute('data-theme', 'light');
+                    document.getElementById('light_icon_li').style.display = 'none';
+                    document.getElementById('dark_icon_li').style.display = 'block';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <my-header></my-header>
+        <main style="flex-direction:row;">
+            <div class="card-02 slide_from_left">
+                <h1>blockchain demo</h1>
+                <br>
+                <h2>client side</h2>
             </div>
-        </div>
-    </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="card-body">
-                    <h4 class="card-title">Wallet Generator</h4>
-                    <p class="card-text">Click on the button below to generate your blockchain wallet</p>
-                    <input type="button" class="btn btn-primary btn-lg" value="Generate Wallet">
+            <div class="card-03 slide_from_right">
+                <p>
+                    At BLOCK DRIVE, we invite you to embark on a journey into the future of technology with our cutting-edge Blockchain Network Demo. Immerse yourself in the transformative world of blockchain and experience firsthand the power of decentralized, secure, and transparent transactions
+                </p>
+                <br><br><br>
+                <div>
+                    <a href="/generate"><button  class="btn primary">generate rsa</button></a>
+                    <a href="/make/transaction"><button  class="btn secondary">make transaction</button></a>
+                    <a href="/view/transactions"><button  class="btn secondary">view transactions</button></a>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-          <label class="col-sm-2">Public Key:</label>
-          <div class="col-sm-10">
-            <textarea id="public_key" rows="5" class="form-control" readonly></textarea>
-          </div>
-        </div>
-
-        <br>
-
-        <div class="row">
-          <label class="col-sm-2">Private Key:</label>
-          <div class="col-sm-10">
-            <textarea id="private_key" rows="5" class="form-control" readonly></textarea>
-          </div>
-        </div>
-
-        <br>
-
-        <div class="row" id="warning" style="display:none">
-          <div class="col-sm-12">
-            <div class="alert alert-danger" role="alert">
-              IMPORTANT
-              <ul>
-                <li>Save you private and public keys. These keys cannot be recovered!</li>
-                <li>Don't share your private key with anyone!</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-    </div>
-
-
-
-
-    <script src="/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/static/vendor/DataTables/js/datatables.min.js"></script>
-    <script src="/static/vendor/DataTables/js/ellipsis.js"></script>
-
-    <script>
-        $(function() {
-            $('input').click(function() {
-
-                $.ajax({
-                    url: '/wallet/new',
-                    type: 'GET',
-                    success: function(response) {
-                        document.getElementById("public_key").innerHTML = response['public_key'];
-                        document.getElementById("private_key").innerHTML = response['private_key'];
-                        document.getElementById("warning").style.display = "block";
-                    },
-                    error: function(error) {
-                        console.log(error);
-                    }
-                });
-            });
-        });
-
-    </script>
-
-</body>
+        </main>
+        <my-footer></my-footer>
+    </body>
 </html>

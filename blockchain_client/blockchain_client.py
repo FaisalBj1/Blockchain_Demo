@@ -37,6 +37,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/generate')
+def generate():
+    return render_template('generate.html')
+
 
 @app.route('/generate/transaction', methods=['POST'])
 def generate_transaction():

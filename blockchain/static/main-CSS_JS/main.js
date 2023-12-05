@@ -28,7 +28,7 @@ const currentTheme = root.getAttribute('data-theme');
 
 // initializing the theme the toggle icon/btn.
 window.addEventListener('load', () => {
-    // inetializing the toggle icon.
+    // initializing the toggle icon.
     if (currentTheme === 'light') {
         document.getElementById('light_icon_li').style.display = 'none';
         document.getElementById('dark_icon_li').style.display = 'block';
@@ -71,7 +71,7 @@ class MyHeader extends HTMLElement {
                     border-bottom: solid 0.25px var(--primary-color);
                     backdrop-filter: blur(15px);
                     text-decoration=none;
-                    box-shadow: 0px 5px 11px 0px var(--shadow-color);
+                    box-shadow: 0px 1px 31px 1px var(--shadow-color);
                 }
 
                 nav {
@@ -118,7 +118,7 @@ class MyHeader extends HTMLElement {
                 }
 
                 /* style for smaller screens */
-                @media (max-width: 50rem){
+                @media (max-width: 100vw){
                     #toggle_icon {
                         display: block;
                     }
@@ -139,8 +139,8 @@ class MyHeader extends HTMLElement {
                     nav #toggle:checked ~ .menu {
                             display: block;
                             animation: slideIn 0.75s ease-out;
-                                                        
-                    }   
+
+                    }
                 }
 
                 @keyframes slideIn {
@@ -152,7 +152,7 @@ class MyHeader extends HTMLElement {
                         opacity: 1;
                         transform: translateY(0);
                     }
-                } 
+                }
             </style>
 
             <header>
@@ -201,7 +201,7 @@ class MyFooter extends HTMLElement {
                     gap: 1em;
                     padding: 0;
                     width: 100%;
-                    box-shadow: 0px -5px 11px 0px var(--shadow-color);
+                    box-shadow: 0px -1px 31px 1px var(--shadow-color);
                 }
                     footer a {
                         color: var(--accent-color);
@@ -242,16 +242,13 @@ class MyFooter extends HTMLElement {
 
                     p a {
                         color: var(--text-color);
-
                     }
+            </style>
 
-
-            </style>    
-            
             <footer>
                 <!-- <a href="#">LOGO</a> -->
                 <br/>
-            
+
                 <div class="social_media_container">
                     <a href="https://facebook.com/" target="_blank" aria-placeholder="hello"><i class="fa-brands fa-square-facebook"></i></a>
                     <a href="https://instagram.com/FaisalBj1" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
@@ -261,7 +258,7 @@ class MyFooter extends HTMLElement {
                     <a href="https://www.linkedin.com/in/faisal-banjar-943b791ba/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://github.com/FaisalBj1" target="_blank"><i class="fa-brands fa-square-github"></i></a>
                 </div>
-        
+
                 <div>
                     <p>Copyright ©${new Date().getFullYear()} All rights reserved | Designed & Developed by <a href="http://FaisalBj1.com" target="_blank">FaisalBj1</a></p>
                 </div>
@@ -274,11 +271,3 @@ customElements.define('my-footer', MyFooter)
 
 // -------------------------------------------------------------------------------------------------------------------------------------
 // TEST---
-
-//window.location.href = '/example';
-
-function test(){
-    console.log("Function [test()] in [main.js] is successfully executed.");
-};
-
-// console.log("TEST");

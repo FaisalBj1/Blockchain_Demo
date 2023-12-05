@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="/static/vendor/DataTables/css/datatables.min.css">
         <!-- FaisalBj1 -->
         <script type="text/javascript" src="{{ url_for('static', filename='main-CSS_JS/main.js') }}"></script>
-        <link rel="stylesheet" href="/static/main-CSS_JS/style-01.css?dev=${timestamp}">
         <script>
             //toggle theme
             function toggleTheme() {
@@ -29,6 +28,7 @@
     </head>
     <body>
         <my-header></my-header>
+
         <main>
             <div class="container-01">
                 <div>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div>
-                    <table id="unmined_transactions_table" class="table table-bordered" cellspacing="0" width="100%"></table>
+                    <table id="unmined_transactions_table" class="table-bordered" cellspacing="0" width="100%"></table>
 
                 </div>
             </div>
@@ -53,13 +53,9 @@
                     </button>
                 </div>
 
-                <table id="transactions_table"  class="table table-bordered" cellspacing="0" width="100%"></table>
+                <table id="transactions_table"  class="table-bordered" cellspacing="0" width="100%"></table>
             </div>
         </main>
-
-
-
-
 
         <my-footer></my-footer>
 
