@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Blockchain Demo - CLIENT</title>
+        <link rel="stylesheet" href="/static/vendor/DataTables/css/datatables.min.css">
+        <!-- FaisalBj1 -->
+        <script type="text/javascript" src="{{ url_for('static', filename='main-CSS_JS/main.js') }}"></script>
+        <script>
+            //toggle theme
+            function toggleTheme() {
+                const root = document.documentElement;
+                const currentTheme = root.getAttribute('data-theme');
+
+                if (currentTheme === 'light') {
+                    root.setAttribute('data-theme', 'dark');
+                    document.getElementById('light_icon_li').style.display = 'block';
+                    document.getElementById('dark_icon_li').style.display = 'none';
+                } else {
+                    root.setAttribute('data-theme', 'light');
+                    document.getElementById('light_icon_li').style.display = 'none';
+                    document.getElementById('dark_icon_li').style.display = 'block';
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <my-header></my-header>
+        <main>
+            <div>
+                <h2>Wallet Generator</h2>
+                <p>Click on the button below to generate your blockchain wallet</p>
+                <div>
+                    <input id="generate_RSA_btn" type="button" class="btn primary" value="Generate Wallet">
+                    <a href="/make/transaction"><input id="make_trans_btn" type="button" class="btn secondary" value="make a transaction" style="visibility:hidden;"></a>
+                </div>
+                <br><br><br><br><br>
+            </div>
+            <div class="card-04 slide_up" style="flex-direction:row;">
+                <div>
+                    <label>Public Key:</label>
+                    <textarea id="public_key" rows="15" readonly></textarea>
+                </div>
+
+                <div>
+                    <label>Private Key:</label>
+                    <textarea id="private_key" rows="15" readonly></textarea>
+                </div>
+
+                <div class="alert-01" id="warning" style="display:none">
+                    <div>
+                      <center>IMPORTANT!</center>
+                      <ul>
+                        <li>Save you private and public keys. These keys cannot be recovered!</li>
+                        <li>Don't share your private key with anyone!</li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <my-footer></my-footer>
+
+        <script src="/static/vendor/jquery/jquery.min.js"></script>
+        <script src="/static/vendor/DataTables/js/datatables.min.js"></script>
+        <script src="/static/vendor/DataTables/js/ellipsis.js"></script>
+        <script>
+            $(function() {
+                $('#generate_RSA_btn').css('transform', 'translate(120px)');
+                $('#generate_RSA_btn').click(function() {
+
+                    $('#make_trans_btn').css('visibility', 'visible');
+                    $('#generate_RSA_btn').addClass('back_to_origin');
+                    setTimeout(function() {
+                        $('#generate_RSA_btn').css('transform', 'translate(0)');
+                    }, 999);//ms
+
+
+                    $.ajax({
+                        url: '/wallet/new',
+                        type: 'GET',
+                        success: function(response) {
+                            document.getElementById("public_key").innerHTML = response['public_key'];
+                            document.getElementById("private_key").innerHTML = response['private_key'];
+                            document.getElementById("warning").style.display = "block";
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
