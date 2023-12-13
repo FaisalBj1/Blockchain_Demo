@@ -80,7 +80,6 @@ class MyHeader extends HTMLElement {
                 my-header {
                     width: 100%;
                     margin-bottom: auto;
-                    border-bottom: solid 0.25px var(--shadow-color);
                     backdrop-filter: blur(15px);
                     box-shadow: 0px 1px 31px 1px var(--shadow-color);
                 }
@@ -262,15 +261,17 @@ class MyFooter extends HTMLElement {
         this.innerHTML = `
             <style>
                 my-footer{
-                    margin-top: auto;
+                    /*position: absolute;
+                    bottom:0;
+                    z-index: 9999999;*/
                     box-sizing: border-box;
                     width: 100%;
+                    margin-top: auto;
                     background: transparent;
                     backdrop-filter: blur(15px);
+                    box-shadow: 0px 1px 31px 1px var(--shadow-color);
                 }
                 footer {
-                    border-top: solid 1px var(--primary-color);
-                    backdrop-filter: blur(15px);
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -287,44 +288,32 @@ class MyFooter extends HTMLElement {
                         color: var(--accent-color);
                         font-size: 0.75rem;
                     }
-                    footer .footer-heading {
-                        color: transparent;
-                        font-weight: 100;
-                        font-size: 2.5rem;
-                        -webkit-text-stroke: 0.025rem var(--text-color);
-                        text-transform: uppercase;
-                        letter-spacing: 3px;
-                    }
-                    .social_media_container {
+                    footer .social_media_container {
                         width: 100%;
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: center;
                         gap: 7px;
                     }
-                    .social_media_container a i {
+                    footer .social_media_container a i {
                         font-size: 1.75rem;
                         color: var(--text-color);
                     }
-                    .social_media_container a i:hover {
+                    footer .social_media_container a i:hover {
                         transform: scale(1.15);
                         transition: transform 0.25s ease-out;
                         color: var(--accent-color);
                     }
-                    .social_media_container a i:not(hover) {
+                    footer .social_media_container a i:not(hover) {
                         transform: scale(1);
                         transition: transform 0.25s ease-out;
                     }
-
-                    p a {
+                    footer .copyright p a {
                         color: var(--text-color);
                     }
             </style>
 
             <footer>
-                <!-- <a href="#">LOGO</a> -->
-                <br/>
-
                 <div class="social_media_container">
                     <a href="https://facebook.com/" target="_blank" aria-placeholder="hello"><i class="fa-brands fa-square-facebook"></i></a>
                     <a href="https://instagram.com/FaisalBj1" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
@@ -335,8 +324,8 @@ class MyFooter extends HTMLElement {
                     <a href="https://github.com/FaisalBj1" target="_blank"><i class="fa-brands fa-square-github"></i></a>
                 </div>
 
-                <div>
-                    <p>Copyright ©${new Date().getFullYear()} All rights reserved | Designed & Developed by <a href="http://FaisalBj1.com" target="_blank">FaisalBj1</a></p>
+                <div class='copyright'>
+                    <p>Copyright ©${new Date().getFullYear()} All rights reserved | Desined & Developed by <a href="http://FaisalBj1.com" target="_blank">FaisalBj1</a></p>
                 </div>
             </footer>
             `
