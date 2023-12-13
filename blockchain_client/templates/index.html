@@ -8,24 +8,18 @@
         <link rel="stylesheet" href="/static/vendor/DataTables/css/datatables.min.css">
         <!-- FaisalBj1 -->
         <script type="text/javascript" src="{{ url_for('static', filename='main-CSS_JS/main.js') }}"></script>
-        <script>
-            //toggle theme
-            function toggleTheme() {
-                const root = document.documentElement;
-                const currentTheme = root.getAttribute('data-theme');
 
-                if (currentTheme === 'light') {
-                    root.setAttribute('data-theme', 'dark');
-                    document.getElementById('light_icon_li').style.display = 'block';
-                    document.getElementById('dark_icon_li').style.display = 'none';
-                } else {
-                    root.setAttribute('data-theme', 'light');
-                    document.getElementById('light_icon_li').style.display = 'none';
-                    document.getElementById('dark_icon_li').style.display = 'block';
-                }
+        <style>
+            h1 {
+                border-right: solid 3px var(--text-color);
+                overflow: hidden;
+                white-space: nowrap;
+                animation: typing 5s steps(14), cursor_blink .4s step-end infinite alternate-reverse;
+                animation-iteration-count: infinite;
             }
-        </script>
+        </style>
     </head>
+
     <body>
         <my-header></my-header>
         <main style="flex-direction:row;">
@@ -34,7 +28,6 @@
                 <br>
                 <h2>client side</h2>
             </div>
-
             <div class="card-03 slide_from_right">
                 <p>
                     At BLOCK DRIVE, we invite you to embark on a journey into the future of technology with our cutting-edge Blockchain Network Demo. Immerse yourself in the transformative world of blockchain and experience firsthand the power of decentralized, secure, and transparent transactions

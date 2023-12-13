@@ -21,38 +21,55 @@ window.addEventListener('load', () => {
 });
 
 // -------------------------------------------------------------------------------------------------------------------------------------
+
 // theme control---
 
-root.setAttribute('data-theme', 'light');
-const currentTheme = root.getAttribute('data-theme');
+var theme = root.getAttribute('data-theme');
 
-// initializing the theme the toggle icon/btn.
-window.addEventListener('load', () => {
-    // inetializing the toggle icon.
-    if (currentTheme === 'light') {
-        document.getElementById('light_icon_li').style.display = 'none';
-        document.getElementById('dark_icon_li').style.display = 'block';
-    } else {
-        document.getElementById('light_icon_li').style.display = 'block';
-        document.getElementById('dark_icon_li').style.display = 'none';
-    }
-});
-
-// theme toggle
-function toggleTheme() {
-    // const root = document.documentElement;
-    // const currentTheme = root.getAttribute('data-theme');
-
-    if (currentTheme === 'light') {
-        root.setAttribute('data-theme', 'dark');
-        document.getElementById('light_icon_li').style.display = 'block';
-        document.getElementById('dark_icon_li').style.display = 'none';
-    } else {
-        root.setAttribute('data-theme', 'light');
-        document.getElementById('light_icon_li').style.display = 'none';
-        document.getElementById('dark_icon_li').style.display = 'block';
-    }
+// initializing/retrieving the theme
+// if ((localStorage.getItem("theme") != 'dark') && (localStorage.getItem("theme") != 'light')){
+if (localStorage.getItem("theme") == null){
+    root.setAttribute('data-theme', 'dark');
+} else {
+    root.setAttribute('data-theme', localStorage.getItem("theme"));
 }
+
+//storing the theme
+const storeTheme = function(theme){
+    localStorage.setItem("theme", theme);
+}
+window.addEventListener('load', () => {
+    // Initialize the toggle icon based on the current theme
+    updateToggleIcon();
+
+    // Theme toggle
+    document.getElementById('theme_icon').addEventListener('click', function () {
+        // Toggle the theme
+        if (theme === 'light') {
+            root.setAttribute('data-theme', 'dark');
+        } else {
+            root.setAttribute('data-theme', 'light');
+        }
+        theme = root.getAttribute('data-theme');
+
+        storeTheme(theme);
+
+        // Update the toggle icon
+        updateToggleIcon();
+    });
+
+    function updateToggleIcon() {
+        // Update the toggle icon based on the current theme
+        if (theme === 'dark') {
+            document.getElementById('theme_icon').classList.add('fa-sun');
+            document.getElementById('theme_icon').classList.remove('fa-moon');
+        } else {
+            document.getElementById('theme_icon').classList.remove('fa-sun');
+            document.getElementById('theme_icon').classList.add('fa-moon');
+        }
+    }
+
+});
 
 // -------------------------------------------------------------------------------------------------------------------------------------
 // header code---
@@ -61,120 +78,183 @@ class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <style>
-                body {
-                    height: 100svh;
-                }
-
-                header ,my-header {
+                my-header {
                     width: 100%;
                     margin-bottom: auto;
-                    border-bottom: solid 0.25px var(--primary-color);
+                    border-bottom: solid 0.25px var(--shadow-color);
                     backdrop-filter: blur(15px);
-                    text-decoration=none;
                     box-shadow: 0px 1px 31px 1px var(--shadow-color);
                 }
-
-                nav {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    text-align: center;
-                    align-items: center;
-                    padding: 0.5rem 1.5rem;
-                    background: transparent;
-                    margin: 0;
-                }
-
-                        
-                nav label i:hover, .logo:hover, header ul li:hover {
-                    transition: all 0.1s ease-out;
-                    transform: scale(1.05);
-                }
-                nav label i:not(hover), .logo:not(hover), ul li:not(hover) {
-                    transition: all 0.15s ease-out;
-                    transform: scale(1);
-                }
-
-                nav ul {
-                    list-style: none;
-                    display: flex;
-                    gap: 2rem;
-                    padding: 0;
-                    margin: 0;
-                }
-                nav :where(a, ul li, i) {
+                my-header * {
                     color: var(--primary-color);
                     text-decoration: none;
+                }
+                nav {
+                    display: grid;
+                    grid-template-areas: 'logo nav_menu icons';
+                    padding: 0 1.5rem;
+                    background: transparent;
+                    margin: 0;
+                    justify-content: stretch;
+                }
+                nav .logo {
+                    grid-area: logo;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: start;
+                    align-items: center;
+
+                }
+                nav .icons {
+                    grid-area: icons;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: end;
+                    align-items: center;
+                    gap: 15px;
+                }
+                nav .menu {
+                    grid-area: nav_menu;
+                    display: flex;
+                    flex-direction: row;
+                }
+                nav .menu ul{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 21px;
+                    transform: translate(-4rem);
+                    place-content: center;
+                }
+                nav .menu * {
+                    text-decoration: none;
+                    list-style: none;
+                }
+                nav i {
+                    font-size: 1.35rem;
                     cursor: pointer;
                 }
 
-                header, a:hover {
-                    text-decoration: none;
-                    color: var(--primary-color);
+                nav label:hover,  ul li:hover {
+                    transition: all 0.15s ease-out;
+                    transform: scale(1.15);
+                }
+                nav label:not(hover),  ul li:not(hover) {
+                    transition: all 0.25s ease-out;
+                    transform: scale(1);
                 }
 
-                #toggle_icon {
+                .menu_icon_anim {
                     display: none;
+                    cursor: pointer;
+                }
+                .menu_icon_anim input {
+                    display: none;
+                }
+                .menu_icon_anim svg {
+                    /* The size of the SVG defines the overall size */
+                    height: 2rem;
+                    /* Define the transition for transforming the SVG */
+                    transition: transform 750ms cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                .line {
+                    fill: none;
+                    stroke: var(--primary-color);
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-width: 3;
+                    /* Define the transition for transforming the Stroke */
+                    transition: stroke-dasharray 750ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 750ms cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                .line-top-bottom {
+                    stroke-dasharray: 12 63;
+                }
+                .line-top-bottom {
+                    stroke-dasharray: 12 63;
+                }
+                .menu_icon_anim input:checked + svg {
+                    transform: rotate(-45deg);
+                }
+                .menu_icon_anim input:checked + svg .line-top-bottom {
+                    stroke-dasharray: 20 300;
+                    stroke-dashoffset: -32.42;
                 }
 
                 /* style for smaller screens */
-                @media (max-width:100svw){
-                    #toggle_icon {
+                @media (max-width: 50rem){
+                    .menu_icon_anim {
                         display: block;
                     }
-                    nav .menu{
-                        width: 100%;
-                        /* height: 100svh; */
+                    nav {
+                        grid-template-areas:
+                        'logo icons'
+                        'nav_menu nav_menu';
+                        padding: 0.5rem 1.5rem;
+                    }
+                    nav .menu {
                         display: none;
                     }
-                    nav ul {
+                    nav .menu ul{
                         flex-direction: column;
-                        align-items: center;
-                        padding: 0.5rem 0;
+                        transform: translate(-1.5rem);
                     }
-                    nav label {
-                        color: var(--text-color);
-                        cursor: pointer;
-                    }
-                    nav #toggle:checked ~ .menu {
-                            display: block;
-                            animation: slideIn 0.75s ease-out;
+                    nav #toggle-02:checked ~ .menu {
+                        display: block;
+                        animation: menu_slide 0.75s ease-out;
                     }
                 }
 
-                @keyframes slideIn {
+                @keyframes menu_slide {
                     from {
                         opacity: 0;
-                        transform: translateY(-9px);
-                    }
-                    to {
+                        transform: translateY(-17px);
+                    } to {
                         opacity: 1;
                         transform: translateY(0);
                     }
-                } 
+                }
             </style>
 
-            <header>
-                <nav>
-                    <a href="/" class="logo" style="font-weight: bold;">BLOCKCHAIN CLIENT</a>
-                    <input type="checkbox" name="" id="toggle" style="display: none;">
-                    <label for="toggle" id="toggle_icon"><i class="fa-solid fa-bars"></i></label>
-                    <div class="menu">
-                        <ul>
-                            <li><a href="/generate">GENERATE RSA</a></li>
-                            <li><a href="/make/transaction">MAKE TRANSACTION</a></li>
-                            <li><a href="/view/transactions">VIEW TRANSACTIONS</a></li>
-                            <li id="light_icon_li"><label id="light_icon"><i class="fa-solid fa-sun"  onclick="toggleTheme()"></i></label></li>
-                            <li id="dark_icon_li"><label id="dark_icon" ><i class="fa-solid fa-moon" onclick="toggleTheme()"></i></label> </li>
-                        </ul>
+            <nav>
+                <a class="logo" href="/" style="font-weight: bold;">block drive - Blockchain based app</a>
+
+                <input type="checkbox" id="toggle-02" style="display: none;">
+                <div class="icons">
+                    <label class="menu_icon_anim" id="menu_icon" for="toggle">
+                        <input type="checkbox" id="toggle" style="display: none;">
+                        <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                        </svg>
+                    </label>
+                    <div>
+                        <label><i id="theme_icon" class="fa-solid fa-sun"></i></label>
                     </div>
-                </nav>
-            </header>
+                </div>
+
+                <div class="menu">
+                    <ul>
+                        <li><a href="/generate">GENERATE RSA</a></li>
+                        <li><a href="/make/transaction">MAKE TRANSACTION</a></li>
+                        <li><a href="/view/transactions">VIEW TRANSACTIONS</a></li>
+                    </ul>
+                </div>
+            </nav>
             `
     }
 }
 
 customElements.define('my-header', MyHeader)
+
+window.addEventListener('load', () => {
+    document.getElementById('menu_icon').addEventListener('click', function() {
+        if (document.getElementById('toggle').checked) {
+            document.getElementById('toggle-02').checked = true;
+        } else {
+            document.getElementById('toggle-02').checked = false;
+        }
+    });
+});
 
 // -------------------------------------------------------------------------------------------------------------------------------------
 // footer code---
@@ -188,7 +268,7 @@ class MyFooter extends HTMLElement {
                 }
 
                 footer, my-footer{
-                    border-top: solid 1px var(--primary-color);
+                    border-top: solid 1px var(--shadow-color);
                     backdrop-filter: blur(15px);
                     box-sizing: border-box;
                     display: flex;
@@ -201,7 +281,7 @@ class MyFooter extends HTMLElement {
                     gap: 1em;
                     padding: 0;
                     width: 100%;
-                    box-shadow: 0px -1px 31px 1px var(--shadow-color);
+                    box-shadow: 0px -1px 11px 1px var(--shadow-color);
                 }
                     footer a {
                         color: var(--accent-color);

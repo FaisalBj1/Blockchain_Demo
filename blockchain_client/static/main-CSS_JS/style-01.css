@@ -24,6 +24,8 @@
     /*--shadow-color: rgba(255, 255, 255, 0.5);*/
     --shadow-color: var(--accent-color);
 
+    color-scheme: dark;
+
     cursor: url('/static/cursors/dot_cursor-dark.png'), auto;
 }
 
@@ -108,15 +110,31 @@
     z-index:1;
 }
 
-
+    /*
+    border-right: solid 3px var(--text-color);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 5s steps(14),  cursor .4s step-end infinite alternate-reverse;
+    animation-iteration-count: infinite;
+    */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+@keyframes cursor_blink {
+    50% {
+        border-color: transparent;
+    }
+}
 /* ---------------------------------------------------------------------------------------------------------------- */
 /* elements */
-
-
-* {
-  /* border: solid 1px red;*/
-}
-
 
 body {
     height: 100svh;
@@ -141,25 +159,11 @@ body {
     animation: fade_in 1.5s ease-in-out;
 }
 
-body::-webkit-scrollbar {
-    width: 5px;
-}
-body::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 1);
-}
-body::-webkit-scrollbar-thumb {
-    background-color: var(--accent-color);
-    border-radius: 7px;
-}
-body::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primary-color);
-}
-
 main {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    place-items:center;
 
     padding: 2.5%;
     margin: 0;
@@ -214,13 +218,11 @@ h1, h2, h3, h4 {
 }
 
 .card-01 {
-    border: solid 1px var(--primary-color);
     border-radius: 15px;
     padding: 3rem;
     width: 75%;
     margin: 0 auto;
-    filter: drop-shadow(3px 3px 7px var(--shadow-color));
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, var(--shadow-color) 0px 7px 13px -3px, var(--shadow-color) 0px -3px 0px inset;
 }
 
 .card-02 {
@@ -232,17 +234,16 @@ h1, h2, h3, h4 {
     flex-direction:column;
     text-align: left;
     justify-content: center;
+    filter: drop-shadow(3px 7px 3px var(--shadow-color));
 }
 
 .card-03 {
-    border: solid 1px var(--primary-color);
     border-radius: 15px;
     padding: 3rem;
     width: 35%;
     height: 25vh;
     margin: 0 auto;
-    filter: drop-shadow(3px 3px 7px var(--shadow-color));
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, var(--shadow-color) 0px 7px 13px -3px, var(--shadow-color) 0px -3px 0px inset;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -250,15 +251,12 @@ h1, h2, h3, h4 {
 }
 
 .card-04 {
-    border: solid 1px var(--primary-color);
     border-radius: 15px;
     padding: 3rem;
     width: 75%;
     height: 25vh;
-    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, var(--shadow-color) 0px 7px 13px -3px, var(--shadow-color) 0px -3px 0px inset;
 
-    filter: drop-shadow(3px 3px 7px var(--shadow-color));
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
     display: flex;
     flex-direction: column;
@@ -272,8 +270,7 @@ h1, h2, h3, h4 {
     padding: 3rem;
     width: 75%;
     margin: 0 auto;
-    filter: drop-shadow(3px 3px 7px var(--shadow-color));
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, var(--shadow-color) 0px 7px 13px -3px, var(--shadow-color) 0px -3px 0px inset;
 }
 
 .row {
@@ -430,9 +427,7 @@ table.table-bordered :where(tr, td) {
     color: #000;
 }
 
-* {
-   /* filter: invert(100%);*/
-}
+
 
 
 

@@ -8,31 +8,26 @@
         <link rel="stylesheet" href="/static/vendor/DataTables/css/datatables.min.css">
         <!-- FaisalBj1 -->
         <script type="text/javascript" src="{{ url_for('static', filename='main-CSS_JS/main.js') }}"></script>
-        <script>
-            //toggle theme
-            function toggleTheme() {
-                const root = document.documentElement;
-                const currentTheme = root.getAttribute('data-theme');
-
-                if (currentTheme === 'light') {
-                    root.setAttribute('data-theme', 'dark');
-                    document.getElementById('light_icon_li').style.display = 'block';
-                    document.getElementById('dark_icon_li').style.display = 'none';
-                } else {
-                    root.setAttribute('data-theme', 'light');
-                    document.getElementById('light_icon_li').style.display = 'none';
-                    document.getElementById('dark_icon_li').style.display = 'block';
-                }
+        <style>
+            /* override */
+            table {
+                max-width:100%;
             }
-        </script>
+
+            my-footer {
+                position: relative;
+                bottom:-250px;
+                z-index: 9999999;
+            }
+s        </style>
     </head>
+
     <body>
         <my-header></my-header>
-
         <main>
             <div class="container-01">
                 <div>
-                    <h4>Transactions to be added to the next block</h4>
+                    <h3>Transactions to be added to the next block</h3>
                     <button type="submit" id="refresh_transactions" class="btn secondary">
                         <i class="fa fa-refresh"></i>
                     </button>
@@ -47,7 +42,7 @@
 
             <div class="container-01">
                 <div>
-                    <h4>Transactions on the blockchain</h4>
+                    <h3>Transactions on the blockchain</h3>
                     <button type="submit" id="refresh_blockchain" class="btn secondary">
                         <i class="fa fa-refresh"></i>
                     </button>
@@ -56,7 +51,6 @@
                 <table id="transactions_table"  class="table-bordered" cellspacing="0" width="100%"></table>
             </div>
         </main>
-
         <my-footer></my-footer>
 
         <script src="/static/vendor/jquery/jquery.min.js"></script>

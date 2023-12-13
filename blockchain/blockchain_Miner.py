@@ -15,6 +15,9 @@ from urllib.parse import urlparse
 MINING_SENDER = "The Blockchain"
 MINING_REWARD = 1
 MINING_DIFFICULTY = 2
+# Mining and Proof of Work:
+#
+# The difficulty level (MINING_DIFFICULTY) is hardcoded. In a real-world scenario, we will need a more dynamic adjustment of difficulty.
 
 
 class Blockchain:

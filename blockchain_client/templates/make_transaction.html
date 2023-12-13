@@ -9,23 +9,6 @@
         <link rel="stylesheet" href="/static/vendor/DataTables/css/datatables.min.css">
         <!-- FaisalBj1 -->
         <script type="text/javascript" src="{{ url_for('static', filename='main-CSS_JS/main.js') }}"></script>
-        <script>
-            //toggle theme
-            function toggleTheme() {
-                const root = document.documentElement;
-                const currentTheme = root.getAttribute('data-theme');
-
-                if (currentTheme === 'light') {
-                    root.setAttribute('data-theme', 'dark');
-                    document.getElementById('light_icon_li').style.display = 'block';
-                    document.getElementById('dark_icon_li').style.display = 'none';
-                } else {
-                    root.setAttribute('data-theme', 'light');
-                    document.getElementById('light_icon_li').style.display = 'none';
-                    document.getElementById('dark_icon_li').style.display = 'block';
-                }
-            }
-        </script>
     </head>
 
     <body>
@@ -140,9 +123,6 @@
                 </div>
             </div>
         </div>
-
-
-
 
         <script src="/static/vendor/jquery/jquery.min.js"></script>
         <script src="/static/vendor/DataTables/js/datatables.min.js"></script>
