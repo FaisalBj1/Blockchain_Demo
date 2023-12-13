@@ -147,7 +147,6 @@ class MyHeader extends HTMLElement {
                 }
                 nav ul li:not(hover) {
                     transition: all 0.25s ease-out;
-                    transform: scale(1);
                 }
 
                 .menu_icon_anim {

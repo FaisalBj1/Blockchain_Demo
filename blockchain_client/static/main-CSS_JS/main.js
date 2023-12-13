@@ -134,13 +134,20 @@ class MyHeader extends HTMLElement {
                     cursor: pointer;
                 }
 
-                nav label:hover,  ul li:hover {
+                nav ul li:hover, nav ul a:hover, #theme_icon:hover {
                     transition: all 0.15s ease-out;
-                    transform: scale(1.15);
+                    transform: scale(1.05);
+                    filter: drop-shadow(0px 0px 1px var(--accent-color));
+                    filter: drop-shadow(0px 0px 3px var(--accent-color));
+                    filter: drop-shadow(0px 0px 5px var(--accent-color));
+                    filter: drop-shadow(0px 0px 7px var(--accent-color));
+                    filter: drop-shadow(0px 0px 9px var(--accent-color));
+                    filter: drop-shadow(0px 0px 11px var(--accent-color));
+                    filter: drop-shadow(0px 0px 13px var(--accent-color));
+                    filter: drop-shadow(0px 0px 15px var(--accent-color));
                 }
-                nav label:not(hover),  ul li:not(hover) {
+                nav ul li:not(hover) {
                     transition: all 0.25s ease-out;
-                    transform: scale(1);
                 }
 
                 .menu_icon_anim {
