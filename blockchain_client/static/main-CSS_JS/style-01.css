@@ -12,7 +12,6 @@
 
     cursor: url('/static/cursors/dot_cursor-light.png'), auto;
 }
-
 :root[data-theme="dark"] {
     /* HEX */
     --text-color: #fdf3e7;
@@ -27,6 +26,16 @@
     color-scheme: dark;
 
     cursor: url('/static/cursors/dot_cursor-dark.png'), auto;
+}
+:root[data-theme="darkness"] {
+    --text-color: #f7f6fe;
+    --bg-color: #000000;
+    --primary-color: #4712ab;
+    --secondary-color: #080425;
+    --accent-color: #702edb;
+
+    color-scheme: dark;
+    cursor: url('/cursors/dot_cursor-dark.png'), auto;
 }
 
 :root {
@@ -318,7 +327,6 @@ h2 {
 }
 
 textarea {
-    background-color: #dedede;
     width: 100%;
     border-radius: 15px;
 }

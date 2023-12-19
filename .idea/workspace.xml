@@ -8,8 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain/static/main-CSS_JS/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/static/main-CSS_JS/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain/static/main-CSS_JS/style-01.css" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/static/main-CSS_JS/style-01.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain/templates/mine.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain/templates/mine.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain_client/static/main-CSS_JS/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain_client/static/main-CSS_JS/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockchain_client/static/main-CSS_JS/style-01.css" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain_client/static/main-CSS_JS/style-01.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blockchain_client/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blockchain_client/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +40,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Faisa/Desktop/Senior_Project/CPIS-499/Blockchain_Demo/blockchain_client",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Faisa/Desktop/Senior_Project/CPIS-499/Blockchain_Demo/blockchain_client&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Faisa\Desktop\Senior_Project\CPIS-499\Blockchain_Demo\blockchain_client" />
@@ -62,7 +65,7 @@
       <recent name="C:\Users\Faisa\Desktop\Senior_Project\CPIS-499\Blockchain_Demo\imgs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Node1">
+  <component name="RunManager" selected="Python.Node2">
     <configuration name="Alice" type="PythonConfigurationType" factoryName="Python">
       <module name="Blockchain_Demo" />
       <option name="INTERPRETER_OPTIONS" value="" />
